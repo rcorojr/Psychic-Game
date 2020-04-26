@@ -18,17 +18,28 @@
 
 <p class=opening>Guess what letter I'm thinking of</p>
 
-<p class=win>Wins: </p>
+<p class=wins>Wins: </p>
 
-<p class=lose>Losses</p>
+<p class=losses>Losses</p>
 
-<p class=guessLeft>Guesses Left:</p> 
+<p class=guesses>Guesses Left:</p> 
 
 <p class=guessSofar>Your Guesses so far:</p>
-<script>
-
-    alert("that's what I'm here for")
 
 
+<script type="text/javascript">
+
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var wins = 0;
+var losses = 0;
+var guesses = 9;
+
+
+document.getElementById('wins').innerHTML = "Wins: " + wins;
+document.getElementById('losses').innerHTML = "losses: " + losses;
+document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+ 
+</script>
 </body>
 </html>
