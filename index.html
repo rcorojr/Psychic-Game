@@ -20,7 +20,7 @@
 
 <p id=wins>Wins: </p>
 
-<p id=losses>Losses</p>
+<p id=losses>Losses:</p>
 
 <p id=guesses>Guesses Left:</p> 
 
@@ -34,6 +34,7 @@ var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
 var wins = 0;
 var losses = 0;
 var guesses = 9;
+var guessSF = ""
 
 var compChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 
@@ -41,6 +42,7 @@ console.log(compChoice);
 
 document.onkeypress = function(event){
     playerGuess = event.key;
+    console.log(playerGuess);
     
     if (playerGuess === compChoice) {
         wins++;
@@ -50,6 +52,7 @@ document.onkeypress = function(event){
 
     else{
         guesses--;
+        document.getElementById('guessSofar').innerHTML = "Your Guesses so far: " + playerGuess
     }
     if (guesses === 0){
         losses++
@@ -58,7 +61,7 @@ document.onkeypress = function(event){
 
 document.getElementById('wins').innerHTML = "Wins: " + wins;
 document.getElementById('losses').innerHTML = "Losses: " + losses;
-document.getElementById('guesses').innerHTML = "Guesses Left: " + guesses;
+document.getElementById('guesses').innerHTML = "Guesses Left: " + guesses, +guesses;
 
 }
 
