@@ -16,15 +16,15 @@
 
 <br> 
 
-<p class=opening>Guess what letter I'm thinking of</p>
+<p id=opening>Guess what letter I'm thinking of</p>
 
-<p class=wins>Wins: </p>
+<p id=wins>Wins: </p>
 
-<p class=losses>Losses</p>
+<p id=losses>Losses</p>
 
-<p class=guesses>Guesses Left:</p> 
+<p id=guesses>Guesses Left:</p> 
 
-<p class=guessSofar>Your Guesses so far:</p>
+<p id=guessSofar>Your Guesses so far:</p>
 
 
 <script type="text/javascript">
@@ -35,10 +35,32 @@ var wins = 0;
 var losses = 0;
 var guesses = 9;
 
+var compChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+console.log(compChoice);
+
+document.onkeypress = function(event){
+    playerGuess = event.key;
+    
+    if (playerGuess === compChoice) {
+        wins++;
+    }
+
+    else{
+        guesses--;
+    }
+    if (guesses === 0){
+        losses++
+    }
 
 document.getElementById('wins').innerHTML = "Wins: " + wins;
 document.getElementById('losses').innerHTML = "losses: " + losses;
 document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+
+}
+
+
+
  
 </script>
 </body>
