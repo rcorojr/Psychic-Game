@@ -44,6 +44,8 @@ document.onkeypress = function(event){
     
     if (playerGuess === compChoice) {
         wins++;
+        compChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(compChoice)
     }
 
     else{
@@ -51,11 +53,12 @@ document.onkeypress = function(event){
     }
     if (guesses === 0){
         losses++
+        
     }
 
 document.getElementById('wins').innerHTML = "Wins: " + wins;
-document.getElementById('losses').innerHTML = "losses: " + losses;
-document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+document.getElementById('losses').innerHTML = "Losses: " + losses;
+document.getElementById('guesses').innerHTML = "Guesses Left: " + guesses;
 
 }
 
