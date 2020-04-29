@@ -7,7 +7,7 @@
     <link ref="text/javascript" href="/assets/javascript/game.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>Pysichic Game</title>
 </head>
 <body>
     
@@ -44,15 +44,17 @@ document.onkeypress = function(event){
     playerGuess = event.key;
     console.log(playerGuess);
     
+    
     if (playerGuess === compChoice) {
         wins++;
         compChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-        console.log(compChoice)
+        
     }
 
     else{
         guesses--;
-        document.getElementById('guessSofar').innerHTML = "Your Guesses so far: " + playerGuess
+        document.getElementById('guessSofar').innerHTML = "Your Guesses so far: " + playerGuess;
+        document.onkeypress.attr.innerHTML("Your Guesses so far: " + playerGuess);
     }
     if (guesses === 0){
         losses++
@@ -64,7 +66,6 @@ document.getElementById('losses').innerHTML = "Losses: " + losses;
 document.getElementById('guesses').innerHTML = "Guesses Left: " + guesses, +guesses;
 
 }
-
 
 
  
